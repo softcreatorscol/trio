@@ -74,13 +74,13 @@ h2{font-family:var(--serif);font-weight:700;color:var(--marfil);font-size:clamp(
 
 /* galería */
 .galeria .intro{max-width:36rem;margin-bottom:2rem}
-.mosaico{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-.mosaico figure{position:relative;overflow:hidden;background:#141a47;aspect-ratio:4/3;border:1px solid rgba(212,175,106,.3)}
-.mosaico .ancho{grid-column:span 2}
-.mosaico img,.mosaico video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
-.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem .9rem .7rem;font-size:.9rem;color:var(--marfil);background:linear-gradient(transparent,rgba(8,12,34,.88));pointer-events:none}
-.mosaico .pendiente{display:grid;place-items:center;text-align:center;padding:1rem;color:var(--lila);border:1px dashed var(--morado);font-size:.95rem}
-.mosaico .pendiente span{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--oro-claro)}
+.mosaico{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:clamp(240px,34vw,400px);gap:.8rem}
+.mosaico figure,.videos figure{position:relative;overflow:hidden;background:#141a47;border:1px solid rgba(212,175,106,.3)}
+.mosaico img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaico figcaption,.videos figcaption{padding:.55rem .9rem;font-size:.92rem;color:var(--oro-claro)}
+.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding-top:1.8rem;color:var(--marfil);background:linear-gradient(transparent,rgba(8,12,34,.88));pointer-events:none}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.8rem;align-items:start}
+.videos video{display:block;width:100%;height:clamp(240px,30vw,420px);object-fit:contain;background:#000}
 .mas{margin-top:1.4rem}
 
 /* contacto */
@@ -106,8 +106,10 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
 @media (max-width:760px){
   nav{display:none}
   .dos,.pasos{grid-template-columns:1fr}
-  .mosaico{grid-template-columns:1fr 1fr}
-  .mosaico .ancho{grid-column:span 2}
+  .mosaico{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(200px,52vw,320px)}
+  .mosaico figure:first-child{grid-column:span 2}
+  .videos{grid-template-columns:1fr}
+  .videos video{height:min(78vh,520px)}
   .integrante{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -162,40 +164,45 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
       <p class="intro">Fotos y videos de nuestras presentaciones. Así se vive una serenata con Variantes Trío.</p>
 
       <div class="mosaico">
-        <!-- FOTO: copie la imagen en la carpeta media/ y cambie el nombre en src -->
-        <figure class="ancho">
-          <img src="trio.jpg" alt="Variantes Trío posando con saco y corbata" loading="lazy">
-          <figcaption>Alberto, Edgar y Jesús</figcaption>
-        </figure>
-
-        <!-- VIDEO: copie el video en media/ (formato .mp4) y cambie el nombre en src.
-             Si tiene una foto de portada, agregue poster="media/portada.jpg" -->
-        <figure class="pendiente">
-          <div><span>Video</span>Aquí va su primer video: media/video1.mp4</div>
-        </figure>
-
-        <figure class="pendiente">
-          <div><span>Foto</span>Aquí va una foto: media/foto1.jpg</div>
-        </figure>
-        <figure class="pendiente">
-          <div><span>Foto</span>Aquí va una foto: media/foto2.jpg</div>
-        </figure>
-        <figure class="pendiente">
-          <div><span>Video</span>Aquí va otro video: media/video2.mp4</div>
-        </figure>
-
-        <!-- PLANTILLAS (quite las marcas de comentario para usarlas) y borre los bloques "pendiente" que reemplace:
-
         <figure>
-          <img src="media/foto1.jpg" alt="Descripción de la foto" loading="lazy">
-          <figcaption>Serenata en Cali</figcaption>
+          <img src="media/trio-estudio.jpg" alt="Variantes Trío con sus guitarras en la sala de ensayo" loading="lazy">
+          <figcaption>En sala de ensayo</figcaption>
         </figure>
-
         <figure>
-          <video src="media/video1.mp4" controls preload="metadata" playsinline></video>
-          <figcaption>Un momento de la serenata</figcaption>
+          <img src="media/jesus-guitarra.jpg" alt="Jesús tocando la guitarra y sonriendo" loading="lazy" style="object-position:50% 35%">
+          <figcaption>Jesús</figcaption>
         </figure>
-        -->
+        <figure>
+          <img src="media/edgar-alberto.jpg" alt="Edgar y Alberto con una guitarra" loading="lazy" style="object-position:50% 40%">
+          <figcaption>Edgar y Alberto</figcaption>
+        </figure>
+      </div>
+
+      <div class="videos">
+        <figure>
+          <video controls preload="none" playsinline poster="media/cumpleanos-1.jpg"><source src="media/cumpleanos-1.mp4" type="video/mp4"></video>
+          <figcaption>Cumpleaños</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/reunion-casa.jpg"><source src="media/reunion-casa.mp4" type="video/mp4"></video>
+          <figcaption>Reunión en casa</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/cumpleanos-2.jpg"><source src="media/cumpleanos-2.mp4" type="video/mp4"></video>
+          <figcaption>Cumpleaños</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/tarima.jpg"><source src="media/tarima.mp4" type="video/mp4"></video>
+          <figcaption>En tarima</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/evento-parque-1.jpg"><source src="media/evento-parque-1.mp4" type="video/mp4"></video>
+          <figcaption>Evento al aire libre</figcaption>
+        </figure>
+        <figure>
+          <video controls preload="none" playsinline poster="media/evento-parque-2.jpg"><source src="media/evento-parque-2.mp4" type="video/mp4"></video>
+          <figcaption>Evento al aire libre</figcaption>
+        </figure>
       </div>
       <p class="mas">¿Quiere ver más? Síganos en nuestras redes, abajo en la sección de contacto.</p>
     </div>
