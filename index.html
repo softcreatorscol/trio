@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Variantes Trío | Serenatas y música en vivo en Cali</title>
+<meta name="description" content="Variantes Trío: serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores. Contáctenos por WhatsApp.">
+<meta property="og:title" content="Variantes Trío | Serenatas en Cali">
+<meta property="og:description" content="Serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores.">
+<meta property="og:image" content="trio.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#0b1230;
+  --noche-2:#121c44;
+  --oro:#d4af6a;
+  --oro-claro:#ecd9a8;
+  --marfil:#f4ecdb;
+  --texto:#d9d7e2;
+  --wa:#25a559;
+  --morado:#8b6fd0;
+  --lila:#c3b2f2;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--texto);font-family:var(--sans);font-size:1.05rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* barra superior */
+header{padding:1.1rem 0;border-bottom:1px solid rgba(212,175,106,.25)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.marca{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--oro-claro);text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:1.6rem;font-size:.95rem}
+nav a{text-decoration:none;color:var(--texto)}
+nav a:hover{color:var(--lila)}
+
+/* portada */
+.portada{padding:clamp(2.5rem,7vw,5rem) 0 0;background:
+  radial-gradient(circle at 15% 0%,rgba(139,111,208,.28),transparent 45%),radial-gradient(circle at 90% 20%,rgba(212,175,106,.10),transparent 40%),var(--noche)}
+.portada h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.2rem,10vw,7.2rem);line-height:.95;color:var(--marfil);letter-spacing:-.01em}
+.portada .bajada{max-width:34rem;margin-top:1.4rem;font-size:1.2rem;color:var(--texto)}
+.acciones{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid var(--oro);transition:background .2s,color .2s}
+.btn-oro{background:var(--oro);color:var(--noche)}
+.btn-oro:hover{background:var(--oro-claro)}
+.btn-linea{color:var(--lila);border-color:var(--morado)}
+.btn-linea:hover{background:rgba(139,111,208,.2)}
+.foto{margin-top:clamp(2rem,5vw,3.5rem);position:relative}
+.foto img{display:block;width:100%;height:auto;border-top:1px solid rgba(212,175,106,.4)}
+.foto::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,var(--noche))}
+
+/* secciones */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+h2{font-family:var(--serif);font-weight:700;color:var(--marfil);font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.05;margin-bottom:1.2rem}
+.dos{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(1.5rem,6vw,5rem);align-items:start}
+.dos p+p{margin-top:1rem}
+
+.ocasiones{background:#141a47}
+.lista{list-style:none}
+.lista li{padding:1.3rem 0;border-bottom:1px solid rgba(212,175,106,.28)}
+.lista li:first-child{border-top:1px solid rgba(212,175,106,.28)}
+.lista strong{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--oro-claro);line-height:1.2}
+
+.pasos{list-style:none;counter-reset:p;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.pasos li{counter-increment:p;border-left:2px solid var(--morado);padding-left:1.1rem}
+.pasos li::before{content:counter(p);display:block;font-family:var(--serif);font-size:2.4rem;line-height:1;color:var(--lila)}
+.pasos b{color:var(--marfil);display:block;margin:.3rem 0 .2rem}
+
+/* contacto */
+.contacto{background:#141a47}
+.integrante{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem 2rem;padding:1.4rem 0;border-bottom:1px solid rgba(212,175,106,.28)}
+.integrante:first-of-type{border-top:1px solid rgba(212,175,106,.28)}
+.integrante h3{font-family:var(--serif);font-size:2rem;color:var(--marfil);line-height:1.1}
+.integrante .tel{font-size:1.15rem;letter-spacing:.04em;color:var(--lila);text-decoration:none}
+.integrante .btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn-wa{background:var(--wa);border-color:var(--wa);color:#fff;padding:.7rem 1.2rem}
+.btn-wa:hover{background:#1e8b4a;border-color:#1e8b4a}
+.btn-llamar{color:var(--lila);border-color:var(--morado);padding:.7rem 1.2rem}
+.btn-llamar:hover{background:rgba(139,111,208,.2)}
+.redes{display:flex;flex-wrap:wrap;gap:1.8rem;margin-top:2.2rem}
+.redes a{color:var(--lila);text-decoration:none;font-weight:500;border-bottom:1px solid var(--morado)}
+.redes a:hover{color:var(--marfil)}
+
+footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;border-top:1px solid rgba(212,175,106,.2)}
+
+/* botón flotante */
+.flota{position:fixed;right:1rem;bottom:1rem;z-index:10;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+
+@media (max-width:760px){
+  nav{display:none}
+  .dos,.pasos{grid-template-columns:1fr}
+  .integrante{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#inicio">Variantes Trío</a>
+    <nav aria-label="Principal">
+      <a href="#ocasiones">Ocasiones</a>
+      <a href="#como">Cómo contratar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="portada">
+    <div class="wrap">
+      <h1>Variantes<br>Trío</h1>
+      <p class="bajada">Serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores. Tres músicos, buena música y puntualidad para su celebración.</p>
+      <div class="acciones">
+        <a class="btn btn-oro" href="#contacto">Cotizar mi evento</a>
+        <a class="btn btn-linea" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap foto">
+      <img src="trio.jpg" width="1175" height="405" alt="Alberto, Edgar y Jesús, los tres integrantes de Variantes Trío, de saco oscuro y corbata morada">
+    </div>
+  </div>
+
+  <section class="ocasiones" id="ocasiones">
+    <div class="wrap dos">
+      <div>
+        <h2>Para cada ocasión</h2>
+        <p>Llevamos la música hasta usted, en su casa, salón o donde se celebre. Cuéntenos de quién es la fecha y nosotros armamos el repertorio.</p>
+      </div>
+      <ul class="lista">
+        <li><strong>Serenatas</strong>Para sorprender a esa persona especial, en Cali y municipios cercanos.</li>
+        <li><strong>Cumpleaños</strong>Música en vivo para que el homenajeado sea el centro de la fiesta.</li>
+        <li><strong>Reuniones sociales</strong>Aniversarios, almuerzos familiares y encuentros entre amigos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Contratar es sencillo</h2>
+      <ol class="pasos">
+        <li><b>Escríbanos</b>Por WhatsApp o llamada, con la fecha, la hora y el lugar.</li>
+        <li><b>Acordamos los detalles</b>Repertorio, duración y valor, sin sorpresas.</li>
+        <li><b>Llegamos puntuales</b>Y hacemos que ese momento se recuerde.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <h2>Hable directamente con nosotros</h2>
+      <p style="max-width:34rem;margin-bottom:2rem">Escoja a cualquiera de los tres. Cualquiera de ellos le atiende y le confirma la fecha.</p>
+
+      <div class="integrante">
+        <div><h3>Alberto</h3><a class="tel" href="tel:+573157987088">315 798 7088</a></div>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573157987088?text=Hola%20Alberto%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573157987088">Llamar</a>
+        </div>
+      </div>
+      <div class="integrante">
+        <div><h3>Edgar</h3><a class="tel" href="tel:+573046341719">304 634 1719</a></div>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573046341719?text=Hola%20Edgar%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573046341719">Llamar</a>
+        </div>
+      </div>
+      <div class="integrante">
+        <div><h3>Jesús</h3><a class="tel" href="tel:+573206445610">320 644 5610</a></div>
+        <div class="btns">
+          <a class="btn btn-wa" href="https://wa.me/573206445610?text=Hola%20Jes%C3%BAs%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-llamar" href="tel:+573206445610">Llamar</a>
+        </div>
+      </div>
+
+      <div class="redes">
+        <!-- Cambie "ejemplo" por el usuario real de cada red -->
+        <a href="https://facebook.com/ejemplo" target="_blank" rel="noopener">Facebook @ejemplo</a>
+        <a href="https://instagram.com/ejemplo" target="_blank" rel="noopener">Instagram @ejemplo</a>
+        <a href="https://tiktok.com/@ejemplo" target="_blank" rel="noopener">TikTok @ejemplo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Variantes Trío · Serenatas en Cali y sus alrededores</div>
+</footer>
+
+<a class="btn btn-wa flota" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+</body>
+</html>
