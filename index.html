@@ -7,13 +7,13 @@
 <meta name="description" content="Variantes Trío: serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores. Contáctenos por WhatsApp.">
 <meta property="og:title" content="Variantes Trío | Serenatas en Cali">
 <meta property="og:description" content="Serenatas, cumpleaños y reuniones sociales en Cali y sus alrededores.">
-<meta property="og:image" content="img/logo-trio.png">
+<meta property="og:image" content="logo-trio.png">
 
 <!-- Favicon -->
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@ nav a{text-decoration:none;color:var(--texto)}
 nav a:hover{color:var(--lila)}
 
 /* portada */
-.portada{padding:clamp(2.5rem,7vw,5rem) 0 clamp(3rem,7vw,5rem);background:
+.portada{padding:clamp(2.5rem,7vw,5rem) 0 0;background:
   radial-gradient(circle at 15% 0%,rgba(139,111,208,.28),transparent 45%),radial-gradient(circle at 90% 20%,rgba(212,175,106,.10),transparent 40%),var(--noche)}
 .portada h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.2rem,10vw,7.2rem);line-height:.95;color:var(--marfil);letter-spacing:-.01em}
 .portada .bajada{max-width:34rem;margin-top:1.4rem;font-size:1.2rem;color:var(--texto)}
@@ -59,6 +59,10 @@ nav a:hover{color:var(--lila)}
 .btn-oro:hover{background:var(--oro-claro)}
 .btn-linea{color:var(--lila);border-color:var(--morado)}
 .btn-linea:hover{background:rgba(139,111,208,.2)}
+
+.foto{margin-top:clamp(2rem,5vw,3.5rem);position:relative}
+.foto img{display:block;width:100%;height:auto;border-top:1px solid rgba(212,175,106,.4)}
+.foto::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(transparent,var(--noche))}
 
 /* secciones */
 section{padding:clamp(3.5rem,8vw,6rem) 0}
@@ -91,6 +95,11 @@ h2{font-family:var(--serif);font-weight:700;color:var(--marfil);font-size:clamp(
 /* galería */
 .galeria{background:#141a47}
 .galeria .intro{max-width:36rem;margin-bottom:2rem}
+.mosaico{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:clamp(240px,34vw,400px);gap:.8rem}
+.mosaico figure{position:relative;overflow:hidden;background:#0e1438;border:1px solid rgba(212,175,106,.3)}
+.mosaico img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaico figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.8rem .9rem .55rem;font-size:.92rem;color:var(--marfil);background:linear-gradient(transparent,rgba(8,12,34,.88));pointer-events:none}
+.mosaico+.videos{margin-top:.8rem}
 .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;align-items:start}
 .videos figure{position:relative;overflow:hidden;background:#0e1438;border:1px solid rgba(212,175,106,.3)}
 .videos figcaption{padding:.55rem .9rem;font-size:.92rem;color:var(--oro-claro)}
@@ -142,6 +151,8 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
   .trio .dos{grid-template-columns:1fr;gap:3rem}
   .emblema{width:min(78%,300px)}
   .rasgos{justify-content:flex-start}
+  .mosaico{grid-template-columns:1fr 1fr;grid-auto-rows:clamp(200px,52vw,320px)}
+  .mosaico figure:first-child{grid-column:span 2}
   .videos{grid-template-columns:1fr}
   .videos video{height:min(78vh,520px)}
   .numero{grid-template-columns:1fr}
@@ -181,6 +192,9 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
         <a class="btn btn-linea" href="https://wa.me/573046341719?text=Hola%2C%20quisiera%20cotizar%20una%20serenata%20con%20Variantes%20Tr%C3%ADo" target="_blank" rel="noopener">Escribir por WhatsApp</a>
       </div>
     </div>
+    <div class="wrap foto">
+      <img src="trio.jpg" width="1175" height="405" alt="Los tres integrantes de Variantes Trío, de saco oscuro y corbata morada">
+    </div>
   </div>
 
   <section class="ocasiones" id="ocasiones">
@@ -201,8 +215,8 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
     <div class="wrap dos">
       <div class="emblema">
         <picture>
-          <source srcset="img/logo-trio.webp" type="image/webp">
-          <img src="img/logo-trio.png" width="640" height="640" loading="lazy" alt="Ilustración de tres músicos con sombrero vueltiao y pañuelo rojo tocando acordeón, guitarra y tambor, sobre los colores de la bandera de Colombia">
+          <source srcset="logo-trio.webp" type="image/webp">
+          <img src="logo-trio.png" width="640" height="640" loading="lazy" alt="Ilustración de tres músicos con sombrero vueltiao y pañuelo rojo tocando acordeón, guitarra y tambor, sobre los colores de la bandera de Colombia">
         </picture>
       </div>
       <div>
@@ -219,8 +233,21 @@ footer{padding:2rem 0 5.5rem;text-align:center;font-size:.9rem;color:#8e91a8;bor
 
   <section class="galeria" id="galeria">
     <div class="wrap">
-      <h2>Escúchenos en vivo</h2>
-      <p class="intro">Videos de nuestras presentaciones. Así se vive una serenata con Variantes Trío.</p>
+      <h2>Véanos y escúchenos en vivo</h2>
+      <p class="intro">Fotos y videos de nuestras presentaciones. Así se vive una serenata con Variantes Trío.</p>
+
+      <div class="mosaico">
+        <figure>
+          <img src="media/trio-estudio.jpg" alt="Variantes Trío con sus guitarras en la sala de ensayo" loading="lazy">
+          <figcaption>En sala de ensayo</figcaption>
+        </figure>
+        <figure>
+          <img src="media/jesus-guitarra.jpg" alt="Integrante del trío tocando la guitarra y sonriendo" loading="lazy" style="object-position:50% 35%">
+        </figure>
+        <figure>
+          <img src="media/edgar-alberto.jpg" alt="Integrantes del trío con una guitarra" loading="lazy" style="object-position:50% 40%">
+        </figure>
+      </div>
 
       <div class="videos">
         <figure>
